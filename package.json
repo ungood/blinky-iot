@@ -1,0 +1,24 @@
+{
+  "name": "blinky-iot",
+  "version": "1.0.0",
+  "description": "An AWS IoT device for BlinkyLights",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ungood/blinky-iot.git"
+  },
+  "keywords": [
+    "iot",
+    "blinky",
+    "aws"
+  ],
+  "author": "Jason Walker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ungood/blinky-iot/issues"
+  },
+  "homepage": "https://github.com/ungood/blinky-iot"
+}
