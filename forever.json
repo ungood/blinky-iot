@@ -1,0 +1,7 @@
+{
+    "uid": "BlinkyIot",
+    "append": true,
+    "watch": true,
+    "script": "index.js",
+    "sourceDir": "/home/pi/blinky-iot"
+}

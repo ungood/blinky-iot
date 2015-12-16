@@ -14,10 +14,10 @@ var currentState = {
     })
 };
 
-var blinky = new Blinky('/dev/cu.usbmodem1421');
+var blinky = new Blinky('/dev/ttyACM0');
 
 function sendFrame(frame) {
-    console.log('Sending frame.');
+    //console.log('Sending frame.');
     frame.forEach(function(color, i) {
         blinky.setPixel(i, color.r, color.g, color.b);
     });
@@ -38,13 +38,13 @@ function off() {
 blinky.on('ready', function() {
     setInterval(function() {
         sendFrame(currentState.frame);
-    }, 1000);
+    }, 100);
 });
 
 console.log('Opening connection to AWS IoT.');
 var iot = require('aws-iot-device-sdk');
 var thingName = 'PipelineLight';
-var certDir = '/Users/jwwalker/awscerts/' + thingName;
+var certDir = '/home/pi/.awscerts/' + thingName;
 var config = {
    keyPath: certDir + '/private.pem.key',
   certPath: certDir + '/certificate.pem.crt',
@@ -52,6 +52,7 @@ var config = {
   clientId: 'BlinkyPi',
     region: 'us-west-2'
 };
+console.log(config);
 
 var shadow = iot.thingShadow(config);
 
